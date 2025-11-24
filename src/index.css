@@ -1,0 +1,271 @@
+/* Global Reset & Font */
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  background-color: #f5f5f5;
+  color: #213547;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Main Wrapper */
+.tade-wrapper {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Card Design */
+.tade-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #eee;
+}
+
+/* Header */
+.tade-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.tade-header h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.5px;
+}
+
+.tade-header p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Form Elements */
+.tade-input-group {
+  margin-bottom: 20px;
+}
+
+.tade-input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tade-input-group input,
+.tade-input-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.tade-input-group input:focus,
+.tade-input-group select:focus {
+  border-color: #FE2C55;
+  /* TikTok Red/Pink */
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(254, 44, 85, 0.1);
+}
+
+/* Buttons */
+.tade-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #FE2C55;
+  /* TikTok Red/Pink */
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tade-btn:hover {
+  background: #e61e45;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(254, 44, 85, 0.3);
+}
+
+.tade-btn:active {
+  transform: translateY(0);
+}
+
+.tade-btn-outline {
+  background: transparent;
+  border: 2px solid #eee;
+  color: #666;
+  margin-top: 20px;
+}
+
+.tade-btn-outline:hover {
+  background: #f5f5f5;
+  border-color: #ddd;
+  color: #333;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Results Section */
+.tade-results {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px dashed #eee;
+  animation: fadeIn 0.5s ease;
+}
+
+.tade-results h3 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+/* Metric Box */
+.tade-metric-box {
+  background: #25F4EE;
+  /* TikTok Cyan */
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.tade-metric-box .tade-label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.tade-metric-box .tade-value {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+/* Charts */
+.tade-chart-section {
+  margin-bottom: 20px;
+}
+
+.tade-chart-section h4 {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.tade-bar-container {
+  display: flex;
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.tade-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 1s ease-in-out;
+}
+
+.tade-female {
+  background: #FE2C55;
+  color: white;
+}
+
+.tade-male {
+  background: #25F4EE;
+  color: black;
+}
+
+.tade-bar-label {
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 0 5px;
+}
+
+/* Tags */
+.tade-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tade-tag {
+  background: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.tade-tag.highlight {
+  background: #111;
+  color: #fff;
+}
+
+.tade-disclaimer {
+  font-size: 11px;
+  color: #999;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.4;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .tade-wrapper {
+    padding: 10px;
+  }
+
+  .tade-card {
+    padding: 20px;
+  }
+}
