@@ -5,6 +5,7 @@ const Footer = () => {
     return (
         <footer className="tade-footer">
             <div className="tade-footer-links">
+                <Link to="/blog">Blog</Link>
                 <Link to="/how-it-works">How It Works</Link>
                 <Link to="/about">About Us</Link>
                 <Link to="/privacy">Privacy Policy</Link>
