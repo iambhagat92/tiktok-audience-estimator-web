@@ -6,6 +6,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
+import HowItWorks from './pages/HowItWorks';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <div className="tade-wrapper">
         <Routes>
           <Route path="/" element={<EstimatorCard />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/about" element={<AboutUs />} />
