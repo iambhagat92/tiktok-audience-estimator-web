@@ -8,6 +8,23 @@ const EstimatorCard = () => {
         views: ''
     });
     const [results, setResults] = useState(null);
+    const [selectedAge, setSelectedAge] = useState(null);
+
+    const ageInsights = {
+        '13-17': "Viral trends, high engagement, low purchasing power.",
+        '18-24': "Trendsetters, impulsive buyers, mobile-first.",
+        '25-34': "Career-focused, high purchasing power, value authenticity.",
+        '35-44': "Parents/Professionals, research-driven, higher AOV.",
+        'Others': "Mixed demographics with varied interests."
+    };
+
+    const handleAgeClick = (age) => {
+        if (selectedAge === age) {
+            setSelectedAge(null); // Toggle off
+        } else {
+            setSelectedAge(age);
+        }
+    };
 
     const handleChange = (e) => {
         setFormData({
@@ -24,11 +41,13 @@ const EstimatorCard = () => {
             parseInt(formData.views) || 0
         );
         setResults(data);
+        setSelectedAge(null); // Reset selection on new calc
     };
 
     const handleReset = () => {
         setResults(null);
         setFormData({ niche: '', followers: '', views: '' });
+        setSelectedAge(null);
     };
 
     return (
@@ -118,14 +137,35 @@ const EstimatorCard = () => {
                     </div>
 
                     <div className="tade-chart-section">
-                        <h4>Age Group Dominance</h4>
+                        <h4>Age Group Dominance (Click for Insights)</h4>
                         <div className="tade-tags">
-                            <span className="tade-tag highlight">{results.ages.primary} (Primary)</span>
+                            <span
+                                className={`tade-tag highlight clickable ${selectedAge === results.ages.primary ? 'active' : ''}`}
+                                onClick={() => handleAgeClick(results.ages.primary)}
+                            >
+                                {results.ages.primary} (Primary)
+                            </span>
                             {results.ages.secondary && (
-                                <span className="tade-tag">{results.ages.secondary}</span>
+                                <span
+                                    className={`tade-tag clickable ${selectedAge === results.ages.secondary ? 'active' : ''}`}
+                                    onClick={() => handleAgeClick(results.ages.secondary)}
+                                >
+                                    {results.ages.secondary}
+                                </span>
                             )}
-                            <span className="tade-tag">Others</span>
+                            <span
+                                className={`tade-tag clickable ${selectedAge === 'Others' ? 'active' : ''}`}
+                                onClick={() => handleAgeClick('Others')}
+                            >
+                                Others
+                            </span>
                         </div>
+                        {selectedAge && (
+                            <div className="tade-age-insight">
+                                <strong>Insight for {selectedAge}:</strong>
+                                <p>{ageInsights[selectedAge] || ageInsights['Others']}</p>
+                            </div>
+                        )}
                     </div>
 
                     <div className="tade-chart-section">

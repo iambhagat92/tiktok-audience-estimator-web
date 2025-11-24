@@ -232,11 +232,49 @@ body {
   font-size: 13px;
   font-weight: 600;
   color: #333;
+  transition: all 0.2s ease;
 }
 
 .tade-tag.highlight {
   background: #111;
   color: #fff;
+}
+
+.tade-tag.clickable {
+  cursor: pointer;
+}
+
+.tade-tag.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tade-tag.active {
+  background: #FE2C55;
+  color: white;
+  box-shadow: 0 0 0 2px rgba(254, 44, 85, 0.3);
+}
+
+/* Age Insight */
+.tade-age-insight {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f0f8ff;
+  border-left: 4px solid #FE2C55;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+  animation: fadeIn 0.3s ease;
+}
+
+.tade-age-insight strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #111;
+}
+
+.tade-age-insight p {
+  margin: 0;
 }
 
 /* Intent Section */
