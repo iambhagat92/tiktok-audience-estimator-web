@@ -128,6 +128,26 @@ const EstimatorCard = () => {
                         </div>
                     </div>
 
+                    <div className="tade-chart-section">
+                        <h4>Audience Intent</h4>
+                        <div className="tade-intent-grid">
+                            {Object.entries(results.intent).map(([key, value]) => (
+                                <div key={key} className="tade-intent-item">
+                                    <div className="tade-intent-label">
+                                        <span className="tade-intent-name">{key}</span>
+                                        <span className="tade-intent-pct">{value}%</span>
+                                    </div>
+                                    <div className="tade-intent-bar-bg">
+                                        <div
+                                            className="tade-intent-bar-fill"
+                                            style={{ width: `${value}%` }}
+                                        ></div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
                     <p className="tade-disclaimer">
                         * Estimates based on industry benchmarks for the selected niche. Actual data requires private API access.
                     </p>

@@ -239,6 +239,41 @@ body {
   color: #fff;
 }
 
+/* Intent Section */
+.tade-intent-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.tade-intent-item {
+  margin-bottom: 5px;
+}
+
+.tade-intent-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #333;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.tade-intent-bar-bg {
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tade-intent-bar-fill {
+  height: 100%;
+  background: #FE2C55;
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
 .tade-disclaimer {
   font-size: 11px;
   color: #999;
@@ -267,5 +302,9 @@ body {
 
   .tade-card {
     padding: 20px;
+  }
+
+  .tade-intent-grid {
+    grid-template-columns: 1fr;
   }
 }
